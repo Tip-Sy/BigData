@@ -15,14 +15,14 @@
 * *user_id*: ID of the user who listened to the song
 * *country_code*: ISO code of the country in which the user listened to the song
 
-### Output file n°1 ###
+### Output file 1 ###
 
 * Name: *country_top50_YYYYMMDD.txt*
 * Description: Top 50 of the songs that are the most listened in each country, for the last seven days
 * Line format: *country_code|sng_id1:n1,sng_id2:n2,...,sng_id50:n50*
 * Note: *sng_id1:n1* is the ID of the first song, with *n1* equal to its number of listenings
 
-### Output file n°2 ###
+### Output file 2 ###
 
 * Name: *user_top50_YYYYMMDD.txt*
 * Description: Top 50 of the songs that are the most listened by each user, for the last seven days.
@@ -54,9 +54,10 @@
 
 ## How do I get set up? ##
 
-* Linux Environment
-* 'php-cli' package installed
-* Run the command: *php main.php*
+1. Prerequisite: Linux environment with 'php-cli' package installed
+2. Add some log files in current directory ([here is a sample](README/sample-listen.log))
+3. Rename log files following this pattern: *listen-YYYYMMDD.log*
+4. Run the command: *php main.php*
 
 
 ### Contribution guidelines ###
