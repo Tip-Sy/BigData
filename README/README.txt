@@ -32,16 +32,17 @@ Basically, here is how the script works:
 ===
 * FILES:
 1) main.php
-   The main file, as its name suggests
-
+   The main file, as its name suggests,
+   that runs the script
+   
 2) SortingScript.php
-   A function that sorts a log file by
-   dividing it into multiple chunks, then
-   using mergeSort algorithm to sort them
+   A function that divides a log file 
+   into multiple chunks, then sort them
+   using mergeSort algorithm
    
 3) MergeFiles.php
    A function that merges sorted files
-   into one file (also sorted)
+   into one sorted file
    
 4) TopFileGenerator.php
    A function that generates the Top
