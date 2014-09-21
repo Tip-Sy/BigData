@@ -46,11 +46,11 @@
 
 ### Description of the files ###
 
-* *main.php*: The file that runs the script
-* *SortingScript.php*: A function that divides a log file into multiple chunks, then sort them using mergeSort algorithm
-* *MergeFiles.php*: A function that merges sorted files into one sorted file
-* *TopFileGenerator.php*: A function that generates the Top file from a sorted log file
-* *MyHeap.php*: A Heap implementation that suits the problem
+* [main.php](main.php): The file that runs the script
+* [SortingScript.php](SortingScript.php): A function that divides a log file into multiple chunks, then sort them using mergeSort algorithm
+* [MergeFiles.php](MergeFiles.php): A function that merges sorted files into one sorted file
+* [TopFileGenerator.php](TopFileGenerator.php): A function that generates the Top file from a sorted log file
+* [MyHeap.php](MyHeap.php): A Heap implementation that suits the problem
 
 ## How do I get set up? ##
 
