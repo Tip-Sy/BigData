@@ -46,16 +46,16 @@
 
 ### Description of the files ###
 
-* [main.php](main.php): The file that runs the script
-* [SortingScript.php](SortingScript.php): A function that divides a log file into multiple chunks, then sort them using mergeSort algorithm
-* [MergeFiles.php](MergeFiles.php): A function that merges sorted files into one sorted file
-* [TopFileGenerator.php](TopFileGenerator.php): A function that generates the Top file from a sorted log file
-* [MyHeap.php](MyHeap.php): A Heap implementation that suits the problem
+* [main.php](https://bitbucket.org/Tip-Sy/bigdata/src/296eec705fd057aec5a25633f3d3d70bc41b9134/main.php): The file that runs the script
+* [SortingScript.php](https://bitbucket.org/Tip-Sy/bigdata/src/296eec705fd057aec5a25633f3d3d70bc41b9134/SortingScript.php): A function that divides a log file into multiple chunks, then sort them using mergeSort algorithm
+* [MergeFiles.php](https://bitbucket.org/Tip-Sy/bigdata/src/296eec705fd057aec5a25633f3d3d70bc41b9134/MergeFiles.php): A function that merges sorted files into one sorted file
+* [TopFileGenerator.php](https://bitbucket.org/Tip-Sy/bigdata/src/296eec705fd057aec5a25633f3d3d70bc41b9134/TopFileGenerator.php): A function that generates the Top file from a sorted log file
+* [MyHeap.php](https://bitbucket.org/Tip-Sy/bigdata/src/296eec705fd057aec5a25633f3d3d70bc41b9134/MyHeap.php): A Heap implementation that suits the problem
 
 ## How do I get set up? ##
 
 1. Prerequisite: Linux environment with 'php-cli' package installed
-2. Add some log files in current directory ([here is a sample](README/sample-listen.log))
+2. Add some log files in current directory ([here is a sample](https://bitbucket.org/Tip-Sy/bigdata/src/296eec705fd057aec5a25633f3d3d70bc41b9134/README/sample-listen.log))
 3. Rename log files following this pattern: *listen-YYYYMMDD.log*
 4. Run the command: *php main.php*
 
