@@ -29,9 +29,9 @@ function generateTopFile($filename, $topFilename, $topNumber, $nbLogParam, $crit
 	$currentValueID = 0;		// ID of the value that is currently counted
 	$counter = 0;				// Counter for the values
 	
-	// In order to keep the Top updated for each criterion, the data is stored in a MinHeap each time
+	// In order to keep the Top updated for each criterion, the data is stored in a MinHeap each time.
 	// The structure of this array is as the following: list($valueID, $counter) = $array;
-	// Therefore, MyHeap class is used, and is sorted according to $counter (and then according to $valueID in case of equality)
+	// Therefore, MyHeap class is used, and sorted according to $counter (and then according to $valueID in case of equality)
 	$VALUE_INDEX = 0;
 	$COUNTER_INDEX = 1;
 	$heap = new MyHeap($COUNTER_INDEX, $VALUE_INDEX);
@@ -102,7 +102,8 @@ function generateTopFile($filename, $topFilename, $topNumber, $nbLogParam, $crit
 				$counter++;
 			}
 		} else {
-			// Data is expected to have ($nbLogParam) values; if not, it means that the end of this file has been reached
+			// Data is expected to have ($nbLogParam) values;
+			// if not, it means that the end of this file has been reached
 			break;
 		}
 	}
