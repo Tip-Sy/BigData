@@ -60,7 +60,8 @@ function mergeFiles($filename, $filesToMerge, $nbLogParam, $comparator1, $compar
 			if(count($row) == ($nbLogParam + 1)) {
 				$heap->insert($row);
 			} else {
-				// Corruption has already been detected before; if $row doesn't contain the whole data, something wrong must have happened meanwhile
+				// Corruption has already been detected before;
+				// if $row doesn't contain the whole data, something wrong must have happened meanwhile
 				exit($red."Unexpected data corruption occurred... Script aborted!".$noColor."\n");
 			}
 			
@@ -94,7 +95,8 @@ function mergeFiles($filename, $filesToMerge, $nbLogParam, $comparator1, $compar
 				// If there is data, it is added to the heap
 				$heap->insert($row);
 			} else {
-				// Data is expected to have ($nbLogParam + 1) values; if not, it means that the end of this file has been reached (case of last line empty)
+				// Data is expected to have ($nbLogParam + 1) values;
+				// if not, it means that the end of this file has been reached (case of last line empty)
 				$nbFilesEnded++;
 			}
 		} else {
