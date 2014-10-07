@@ -17,14 +17,14 @@
 
 ### Output file 1 ###
 
-* Name: *country_top50_YYYYMMDD.txt*
+* Name: *countryTop50-YYYYMMDD.txt*
 * Description: Top 50 of the songs that are the most listened in each country, for the last seven days
 * Line format: *country_code|sng_id1:n1,sng_id2:n2,...,sng_id50:n50*
 * Note: *sng_id1:n1* is the ID of the first song, with *n1* equal to its number of listenings
 
 ### Output file 2 ###
 
-* Name: *user_top50_YYYYMMDD.txt*
+* Name: *userTop50-YYYYMMDD.txt*
 * Description: Top 50 of the songs that are the most listened by each user, for the last seven days.
 * Line format: *user_id|sng_id1:n1,sng_id2:n2,...,sng_id50:n50*
 * Note: *sng_id1:n1* is the ID of the first song, with *n1* equal to its number of listenings
