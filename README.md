@@ -9,7 +9,7 @@
 
 ### Input files ###
 
-* The name of each log file is "listen-YYYYMMDD.log", containing all the listenings of the day "YYYYMMDD"
+* The name of each log file is "listenings-YYYYMMDD.log", containing all the listenings of the day "YYYYMMDD"
 * Each line of the files represents one listening, and is formatted as follows: *song_id|user_id|country_code*
 * *song_id*: ID of the song listened
 * *user_id*: ID of the user who listened to the song
@@ -57,7 +57,7 @@
 
 1. Prerequisite: Linux environment with 'php-cli' package installed
 2. Add some log files in current directory ([here is a sample](Sample/sample.log))
-3. Rename log files following this pattern: *listen-YYYYMMDD.log*
+3. Rename log files following this pattern: *listenings-YYYYMMDD.log*
 4. Run the command: *php main.php*
 
 
