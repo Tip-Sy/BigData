@@ -133,12 +133,12 @@ echo "\n***\n\n";
  *****************************/
 echo $blue."=== STEP 4 ===".$noColor."\n";
 // 4a) User Top
-$userTopFilename = 'user_top'.$TOP_NUMBER.'_'.date('Ymd').'.txt';
+$userTopFilename = 'userTop'.$TOP_NUMBER.'-'.date('Ymd').'.txt';
 generateTopFile($userWeeklySortedFile, $userTopFilename, $TOP_NUMBER, $NB_LOG_PARAM, $USER_ID_INDEX, $SONG_ID_INDEX);
 echo "\n***\n\n";
 
 // 4b) Country Top
-$countryTopFilename = 'country_top'.$TOP_NUMBER.'_'.date('Ymd').'.txt';
+$countryTopFilename = 'countryTop'.$TOP_NUMBER.'-'.date('Ymd').'.txt';
 generateTopFile($countryWeeklySortedFile, $countryTopFilename, $TOP_NUMBER, $NB_LOG_PARAM, $COUNTRY_INDEX, $SONG_ID_INDEX);
 echo "\n";
 
