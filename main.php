@@ -32,7 +32,7 @@ $OK = $green.'OK'.$noColor."\n";
 /****************************************
  * STEP 0: Check for the file of the day
  ****************************************/
-$filename = 'listen-'.date('Ymd').'.log';
+$filename = 'listening-'.date('Ymd').'.log';
 if(!file_exists($filename)) {
 	exit($red."ERROR: Log file of the day not found, script aborted!".$noColor."\n");
 }
@@ -72,7 +72,7 @@ $previousCountrySortedFiles[] = $countrySortedFile;
 // Check the files of the 6 previous days
 for($i=1; $i<7; $i++) {
 	$timestamp = time() - 3600*24*$i;
-	$previousLogFile = 'listen-'.date('Ymd', $timestamp).'.log';
+	$previousLogFile = 'listening-'.date('Ymd', $timestamp).'.log';
 	$previousUserSortedFile = str_replace(".log", "_userSorted.log", $previousLogFile);
 	$previousCountrySortedFile = str_replace(".log", "_countrySorted.log", $previousLogFile);
 	
