@@ -4,7 +4,7 @@ include 'SortingScript.php';	// Script to sort the log file
 include 'TopFileGenerator.php';	// Script to generate the Top 50 file
 
 
-ini_set('memory_limit', '1024M');				// Set the memory limit to 1Gb, as specified
+ini_set('memory_limit', '1024M');			// Set the memory limit to 1Gb, as specified
 date_default_timezone_set('Europe/Paris');		// Set default timezone to Paris
 
 
