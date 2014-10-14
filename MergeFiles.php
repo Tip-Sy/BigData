@@ -73,9 +73,9 @@ function mergeFiles($filename, $filesToMerge, $nbLogParam, $comparator1, $compar
 	
 	// Extract the smallest data from the heap, and write it in the final file
 	if(!$heap->isEmpty()) {
-		$chunkLine = $heap->extract();					// Extraction of the data
-		$indexOfLastFileRead = array_pop($chunkLine);	// Extraction of the index of the file from which data is merged
-		fwrite($fp, implode('|',$chunkLine)."\n");		// Writing the data in the final file
+		$chunkLine = $heap->extract();			// Extraction of data
+		$indexOfLastFileRead = array_pop($chunkLine);	// Extraction of index of the file from which data is merged
+		fwrite($fp, implode('|',$chunkLine)."\n");	// Writing data in the final file
 	} else {
 		// At this point, the heap shouldn't be empty; if it is, something wrong must have happened
 		exit($red."Heap is unexpectedly empty... Script aborted!".$noColor."\n");
