@@ -2,14 +2,15 @@
 
 ## General description ##
 
-* This project contains my solution to an interesting sorting problem
+* This project contains my solution to an interesting sorting problem I had to solve
 * The aim of the script is to analyze big log files, and generate sorted files
-* *Input*: big log files containing formatted data of song listennings
-* *Output*: two sorted files giving the 50 most listenned songs according to various criteria
+* *Input*: big log files containing formatted data of song listenings
+* *Output*: two sorted files giving the 50 most listened songs according to various criteria
 
 ### Input files ###
 
-* The name of each log file is "listenings-YYYYMMDD.log", containing all the listenings of the day "YYYYMMDD"
+* The names of the log files follow this pattern: *listenings-YYYYMMDD.log*
+* Each log file contains all the listenings of the date *YYYYMMDD*
 * Each line of the files represents one listening, and is formatted as follows: *song_id|user_id|country_code*
 * *song_id*: ID of the song listened
 * *user_id*: ID of the user who listened to the song
@@ -18,14 +19,14 @@
 ### Output file 1 ###
 
 * Name: *countryTop50-YYYYMMDD.txt*
-* Description: Top 50 of the songs that are the most listened in each country, for the last seven days
+* Description: Top 50 of the most listened songs per country, for the last seven days
 * Line format: *country_code|sng_id1:n1,sng_id2:n2,...,sng_id50:n50*
 * Note: *sng_id1:n1* is the ID of the first song, with *n1* equal to its number of listenings
 
 ### Output file 2 ###
 
 * Name: *userTop50-YYYYMMDD.txt*
-* Description: Top 50 of the songs that are the most listened by each user, for the last seven days.
+* Description: Top 50 of the most listened songs per user, for the last seven days
 * Line format: *user_id|sng_id1:n1,sng_id2:n2,...,sng_id50:n50*
 * Note: *sng_id1:n1* is the ID of the first song, with *n1* equal to its number of listenings
 
@@ -47,8 +48,8 @@
 ### Description of the files ###
 
 * [main.php](main.php): The file that runs the script
-* [SortingScript.php](SortingScript.php): A function that divides a log file into multiple chunks, then sort them using mergeSort algorithm
-* [MergeFiles.php](MergeFiles.php): A function that merges sorted files into one sorted file
+* [SortingScript.php](SortingScript.php): A function that sorts an input file using merge sort algorithm
+* [MergeFiles.php](MergeFiles.php): A function that merges multiple sorted files into one sorted file
 * [TopFileGenerator.php](TopFileGenerator.php): A function that generates the Top file from a sorted log file
 * [MyHeap.php](MyHeap.php): A Heap implementation that suits the problem
 * Sample/[sample.log](Sample/sample.log): Sample log file for testing purposes
