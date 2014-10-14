@@ -3,9 +3,11 @@
 include 'MergeFiles.php';	// Script to merge sorted files
 
 /**
- * Function that sorts the log file according to 2 comparator indexes
+ * Function that sorts input log file (according to 2 comparator indexes)
+ * by reading one chunk of this file at a time, then applying merge sort 
+ * algorithm on each chunk, and finally merge them into a sorted file
  * 
- * In our example, there are only 3 possible values for these comparators:
+ * In our example, there are only 3 possible values for comparators:
  * 0: song_id
  * 1: usr_id
  * 2: country_code
@@ -22,6 +24,9 @@ include 'MergeFiles.php';	// Script to merge sorted files
 function sortLogFile($filename, $sortedFilename, $logParamPatterns, $comparator1, $comparator2) {
 	global $red, $green, $blue, $noColor, $OK, $INDEXES;
 	
+	// Number of lines for each chunk of file (this length should depend on the length of the file to sort)
+	$CHUNK_LENGTH = 1000;
+	
 	echo $blue."*** Sorting ".$filename." according to ".$INDEXES[$comparator1]." ***".$noColor."\n";
 	
 	$fh = fopen($filename, 'r') or die($red."Oops, couldn't open ".$filename."!".$noColor."\n\n");
@@ -35,8 +40,8 @@ function sortLogFile($filename, $sortedFilename, $logParamPatterns, $comparator1
 		
 		echo "Creating and sorting chunk file n°".$nbTmpFiles."... ";
 		
-		// Reading a chunk of desired length (this length should depend on the length of the file to sort)
-		while($i<10000 && !feof($fh)) {
+		// Reading a chunk of desired length
+		while($i < $CHUNK_LENGTH && !feof($fh)) {
 			$line = trim(fgets($fh));
 			$row = explode('|',$line);
 			
@@ -44,7 +49,7 @@ function sortLogFile($filename, $sortedFilename, $logParamPatterns, $comparator1
 			if(count($row) == $nbLogParam) {
 				// Advanced detection of data corruption with pattern matching
 				$isCorrupted = false;
-				for($j=0; $j<$nbLogParam; $j++) {
+				for($j=0; $j < $nbLogParam; $j++) {
 					if(preg_match($logParamPatterns[$j], $row[$j]) != 1) {
 						$isCorrupted = true;
 						break;
@@ -80,7 +85,7 @@ function sortLogFile($filename, $sortedFilename, $logParamPatterns, $comparator1
 	echo $green."Chunk files sorted!".$noColor."\n";
 	
 	$chunkNames = array();
-	for($i=0; $i<$nbTmpFiles; $i++) {
+	for($i=0; $i < $nbTmpFiles; $i++) {
 		$chunkNames[] = "chunk_".$i.".log";
 	}
 	
@@ -91,9 +96,10 @@ function sortLogFile($filename, $sortedFilename, $logParamPatterns, $comparator1
 
 
 /**
- * The famous mergeSort algorithm implementation
- * The data parameter is formatted as follow (where i is the index):
- * list($song_id, $usr_id, $country_code) = $data[i];
+ * The famous merge sort algorithm implementation
+ * 
+ * $data is an array formatted as follow (with $i as an index):
+ * list($song_id, $usr_id, $country_code) = $data[$i];
  * 
  * @param $data, a multidimensional array containing the log data
  * @param $comparator1, the first comparator index (0: song_id, 1: usr_id, 2: country_code)
@@ -111,12 +117,12 @@ function mergeSort($data, $comparator1, $comparator2) {
 
 
 /**
- * The merging function of the mergeSort algorithm
+ * The merging function of the merge sort algorithm
  * The sorting mecanism is done according to the first comparator index, 
  * and in case of equality, the comparison is made with the second one
  * 
- * @param $left, the left part of $data array (from mergeSort function), recursively in the mergeSort algorithm process
- * @param $right, the right part of $data array (from mergeSort function), recursively in the mergeSort algorithm process
+ * @param $left, the left part of $data array (from mergeSort function), recursively in the merge sort algorithm process
+ * @param $right, the right part of $data array (from mergeSort function), recursively in the merge sort algorithm process
  * @param $comparator1, the first comparator index (0: song_id, 1: usr_id, 2: country_code)
  * @param $comparator2, the second comparator index (0: song_id, 1: usr_id, 2: country_code)
  */
