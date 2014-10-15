@@ -27,11 +27,11 @@ function generateTopFile($filename, $topFilename, $topNumber, $nbLogParam, $crit
 	
 	$currentCriterionID = 0;	// ID of the criterion that is currently analyzed
 	$currentValueID = 0;		// ID of the value that is currently counted
-	$counter = 0;				// Counter for the values
+	$counter = 0;			// Counter for the values
 	
 	// In order to keep the Top updated for each criterion, the data is stored in a MinHeap each time.
 	// The structure of this array is as the following: list($valueID, $counter) = $array;
-	// Thus, MyHeap class is used and sorted according to $counter (and then according to $valueID in case of equality)
+	// Thus, MyHeap class is used and sorted according to $counter, and then according to $valueID in case of equality
 	$VALUE_INDEX = 0;
 	$COUNTER_INDEX = 1;
 	$heap = new MyHeap($COUNTER_INDEX, $VALUE_INDEX);
