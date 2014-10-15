@@ -25,7 +25,7 @@ function sortLogFile($filename, $sortedFilename, $logParamPatterns, $comparator1
 	global $red, $green, $blue, $noColor, $OK, $INDEXES;
 	
 	// Number of lines for each chunk of file (this length should depend on the length of the file to sort)
-	$CHUNK_LENGTH = 1000;
+	$CHUNK_LENGTH = 10000;
 	
 	echo $blue."*** Sorting ".$filename." according to ".$INDEXES[$comparator1]." ***".$noColor."\n";
 	
