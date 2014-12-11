@@ -11,7 +11,7 @@
 
 * The names of the log files follow this pattern: **listenings-YYYYMMDD.log**
 * Each log file contains all the listenings of the date *YYYYMMDD*
-* Each line of the files represents one listening, and is formatted as follows: ***song_id|user_id|country_code***
+* Each line represents one listening, and is formatted as follows: ***song_id|user_id|country_code***
 * **song_id**: ID of the song listened
 * **user_id**: ID of the user who listened to the song
 * **country_code**: ISO code of the country in which the user listened to the song
