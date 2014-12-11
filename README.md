@@ -2,7 +2,7 @@
 
 ## General description ##
 
-* This project contains my solution to an interesting sorting problem I had to solve
+* This project contains my solution to a programming competition
 * The aim of the script is to analyze big log files, and generate sorted files
 * *Input*: big log files containing formatted data of song listenings
 * *Output*: two sorted files giving the 50 most listened songs according to various criteria
