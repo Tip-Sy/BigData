@@ -2,40 +2,40 @@
 
 ## General description ##
 
-* This project contains my solution to a programming competition
+* This project contains my solution to a programming contest
 * The aim of the script is to analyze big log files, and generate sorted files
-* *Input*: big log files containing formatted data of song listenings
-* *Output*: two sorted files giving the 50 most listened songs according to various criteria
+* **Input**: big log files containing formatted data of song listenings
+* **Output**: two sorted files giving the 50 most listened songs according to various criteria
 
 ### Input files ###
 
-* The names of the log files follow this pattern: *listenings-YYYYMMDD.log*
+* The names of the log files follow this pattern: **listenings-YYYYMMDD.log**
 * Each log file contains all the listenings of the date *YYYYMMDD*
-* Each line of the files represents one listening, and is formatted as follows: *song_id|user_id|country_code*
-* *song_id*: ID of the song listened
-* *user_id*: ID of the user who listened to the song
-* *country_code*: ISO code of the country in which the user listened to the song
+* Each line of the files represents one listening, and is formatted as follows: ***song_id|user_id|country_code***
+* **song_id**: ID of the song listened
+* **user_id**: ID of the user who listened to the song
+* **country_code**: ISO code of the country in which the user listened to the song
 
 ### Output file 1 ###
 
-* Name: *countryTop50-YYYYMMDD.txt*
+* Name: **countryTop50-YYYYMMDD.txt**
 * Description: Top 50 of the most listened songs per country, for the last seven days
-* Line format: *country_code|sng_id1:n1,sng_id2:n2,...,sng_id50:n50*
-* Note: *sng_id1:n1* is the ID of the first song, with *n1* equal to its number of listenings
+* Line format: ***country_code|sng_id1:n1,sng_id2:n2,...,sng_id50:n50***
+* Note: **sng_id1** is the ID of the first song, and **n1** is equal to its number of listenings
 
 ### Output file 2 ###
 
-* Name: *userTop50-YYYYMMDD.txt*
+* Name: **userTop50-YYYYMMDD.txt**
 * Description: Top 50 of the most listened songs per user, for the last seven days
-* Line format: *user_id|sng_id1:n1,sng_id2:n2,...,sng_id50:n50*
-* Note: *sng_id1:n1* is the ID of the first song, with *n1* equal to its number of listenings
+* Line format: ***user_id|sng_id1:n1,sng_id2:n2,...,sng_id50:n50***
+* Note: **sng_id1** is the ID of the first song, and **n1** is equal to its number of listenings
 
 
 ## How does the script work? ##
 
 ### Running steps ###
 
-* 0) Check for the log file of the day
+* 0) Check for the log file of the current day
 * 1a) Sort it according to user_id
 * 1b) Sort it according to country_code
 * 2a) Check for the 6 previous log files
@@ -58,8 +58,8 @@
 
 1. Prerequisite: Linux environment with 'php-cli' package installed
 2. Add some log files in current directory ([here is a sample](Sample/sample.log))
-3. Rename log files following this pattern: *listenings-YYYYMMDD.log*
-4. Run the command: *php main.php*
+3. Rename log files using the **current date** and previous ones in: **listenings-YYYYMMDD.log**
+5. Run the command: ***php main.php***
 
 
 ### Contribution guidelines ###
