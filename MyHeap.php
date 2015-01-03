@@ -17,15 +17,19 @@ class MyHeap extends SplHeap {
 		$this->comparator2 = $comparator2;
 	}
 	
-    public function compare($array1, $array2) {
+	public function compare($array1, $array2) {
+		
 		// First comparison according to $comparator1
-        if($array1[$this->comparator1] == $array2[$this->comparator1]) {
+		if($array1[$this->comparator1] == $array2[$this->comparator1]) {
+			
 			// In case of equality, a second comparison is made according to $comparator2
 			if($array1[$this->comparator2] == $array2[$this->comparator2]) return 0;
+			
 			return $array1[$this->comparator2] < $array2[$this->comparator2] ? 1 : -1;
 		}
-        return $array1[$this->comparator1] < $array2[$this->comparator1] ? 1 : -1;
-    }
+		
+		return $array1[$this->comparator1] < $array2[$this->comparator1] ? 1 : -1;
+	}
 }
 
 ?>
